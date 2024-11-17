@@ -74,6 +74,7 @@ async def plot_user_activities(request: PlotRequest):
         peak_y = y_smooth_new[peak_index]
         
         # Plot configuration
+        plt.figure(figsize=(9, 5))
         plt.plot(x_smooth_new, y_smooth_new, color="#63907A", linewidth=2)
         xmin, xmax = plt.xlim()
         ymin, ymax = plt.ylim(y_smooth_new.min(), 100)
@@ -100,6 +101,7 @@ async def plot_user_activities(request: PlotRequest):
         x_smooth_new = np.arange(len(month_data))
         y_smooth_new = np.zeros(len(month_data))
         
+        plt.figure(figsize=(9, 5))
         plt.plot(x_smooth_new, y_smooth_new, linewidth=0)
         plt.ylim(y_smooth_new.min(), y_smooth_new.max()+5)
 
